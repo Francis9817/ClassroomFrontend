@@ -30,8 +30,8 @@ const routes: Routes = [
   loadChildren:() => import('./pages/component-level/level.module').then(m=>m.LevelModule)},
   {path:'pages',
   loadChildren:() => import('./pages/component-schedule/schedule.module').then(m=>m.ScheduleModule)},
-  /*{path:'pages',
-  loadChildren:() => import('./pages/component-school-year/school-year.module').then(m=>m.schoolYearModule)},*/
+  {path:'pages',
+  loadChildren:() => import('./pages/component-school-year/school-year.module').then(m=>m.schoolYearModule)},
   {path:'pages',
   loadChildren:() => import('./pages/component-status/status.module').then(m=>m.StatusModule)},
   {path:'pages',
