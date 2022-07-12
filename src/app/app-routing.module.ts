@@ -16,10 +16,8 @@ import { WeekdaysComponent } from './pages/component-weekdays/weekdays/weekdays.
 
 
 const routes: Routes = [
-  {path:'pages',
-  loadChildren:() => import('./pages/component-career/career.module').then(m=>m.CareerModule)},
-  {path:'pages',
-  loadChildren:() => import('./pages/component-classroom/classroom.module').then(m=>m.ClassroomModule)},
+  {path:'career', component: CareerComponent},
+  {path:'teacher', component: TeacherComponent},
   {path:'pages',
   loadChildren:() => import('./pages/component-course/course.module').then(m=>m.CourseModule)},
   {path:'pages',
