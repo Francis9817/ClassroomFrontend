@@ -1,42 +1,40 @@
-// import {Injectable} from '@angular/core';
-// import {HttpClient} from '@angular/common/http';
-// import {ResponseModel} from '../models/response.model';
-// import {CategoryModel} from '../models/category.model';
-// import {environment} from '../../environments/environment';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {environment} from '../../environments/environment';
 
-// @Injectable({
-//   providedIn: 'root'
-// })
+@Injectable({
+  providedIn: 'root'
+})
 
-// export class CategoryHttpService {
-//   API_URL: string;
+export class DayHttpService {
+  API_URL: string;
 
-//   constructor(private httpClient: HttpClient) {
-//     this.API_URL = environment.API_URL;
-//   }
+  constructor(private httpClient: HttpClient) {
+    this.API_URL = environment.HOST;
+  }
 
-//   index() {
-//     const url = `${this.API_URL}/categories`
-//     return this.httpClient.get<ResponseModel>(url);
-//   }
+  findAll() {
+    const url = `${this.API_URL}/days`
+    return this.httpClient.get(url);
+  }
 
-//   show(id: number) {
-//     const url = `${this.API_URL}/categories/${id}`
-//     return this.httpClient.get<ResponseModel>(url);
-//   }
+  findOne(id: number) {
+    const url = `${this.API_URL}/days/${id}`
+    return this.httpClient.get(url);
+  }
 
-//   store(category: CategoryModel) {
-//     const url = `${this.API_URL}/categories`
-//     return this.httpClient.post<ResponseModel>(url, category);
-//   }
+  create(payload: any) {
+    const url = `${this.API_URL}/days`
+    return this.httpClient.post(url, payload);
+  }
 
-//   update(id: number, category: CategoryModel) {
-//     const url = `${this.API_URL}/categories/${id}`
-//     return this.httpClient.put<ResponseModel>(url, category);
-//   }
+  update(id: number, payload: any) {
+    const url = `${this.API_URL}/days/${id}`
+    return this.httpClient.put(url, payload);
+  }
 
-//   destroy(id: number) {
-//     const url = `${this.API_URL}/categories/${id}`
-//     return this.httpClient.delete<ResponseModel>(url);
-//   }
-// }
+  delete(id: number) {
+    const url = `${this.API_URL}/days/${id}`
+    return this.httpClient.delete(url);
+  }
+}

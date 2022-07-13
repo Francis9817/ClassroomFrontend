@@ -1,5 +1,4 @@
 const HOST = 'http://localhost:3000';
-// const URL_PUBLIC = 'https://localhost:8000';
 
 export const environment = {
   production: false,
